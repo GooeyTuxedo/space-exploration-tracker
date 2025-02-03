@@ -48,7 +48,11 @@ function ProjectsError({ error }: { error: Error }) {
   )
 }
 
-export default async function ProjectsPage({ searchParams }: { searchParams: { page?: string } }) {
+type Props = {
+  searchParams: Promise<{ page?: string | undefined }>
+}
+
+export default async function ProjectsPage({ searchParams }: Props) {
   const { page } = await searchParams;
   const currentPage = page ? Number.parseInt(page) : 1
 
