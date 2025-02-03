@@ -1,4 +1,4 @@
-export async function fetchNasaData(subdomain: string = "api", endpoint: string, params: Record<string, string> = {}) {
+export async function fetchNasaData(subdomain: string, endpoint: string, params: Record<string, string> = {}) {
   const NASA_API_BASE_URL = `https://${subdomain}.nasa.gov`
   const url = new URL(`${NASA_API_BASE_URL}${endpoint}`)
   url.searchParams.append("api_key", process.env.NASA_API_KEY || "")
@@ -29,4 +29,8 @@ export async function fetchAllProjects() {
   });
 
   return response.projects;
+}
+
+export async function fetchAPODImages(count = 20) {
+  return fetchNasaData("api", "/planetary/apod", { count: count.toString() })
 }
