@@ -37,7 +37,7 @@ const topics: Topic[] = [
         },
         {
           title: 'Other Objects',
-          content: 'The Solar System includes dwarf planets like Pluto, dozens of moons, and millions of asteroids, comets, and meteoroids. Most of the system&apos;s mass is in the Sun, with Jupiter containing the majority of the remaining mass.'
+          content: 'The Solar System includes dwarf planets like Pluto, dozens of moons, and millions of asteroids, comets, and meteoroids. Most of the system\'s mass is in the Sun, with Jupiter containing the majority of the remaining mass.'
         }
       ]
     }
@@ -112,7 +112,7 @@ const topics: Topic[] = [
         },
         {
           title: 'Recent Discoveries',
-          content: 'Major achievements include the first black hole image (M87*) in 2019, gravitational wave detection from mergers, and confirmation of Sagittarius A* at our galaxy&apos;s center.'
+          content: 'Major achievements include the first black hole image (M87*) in 2019, gravitational wave detection from mergers, and confirmation of Sagittarius A* at our galaxy\'s center.'
         },
         {
           title: 'Space-Time Effects',
