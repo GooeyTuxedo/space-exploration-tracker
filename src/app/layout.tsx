@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
   title: "Space Exploration Tracker",
-  description: "Track space missions, celestial events, and explore stunning images from space.",
+  description: "Track space technology, celestial events, and explore stunning images from space.",
 }
 
 export default function RootLayout({

@@ -1,5 +1,5 @@
 import { fetchAllProjects } from "@/utils/nasa-api"
-import { MissionsList } from "./MissionsList"
+import { ProjectsList } from "./ProjectsList"
 import { Suspense } from "react"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { Loader2 } from "lucide-react"
@@ -31,7 +31,7 @@ async function getPaginatedProjects(page: number) {
   }
 }
 
-function MissionsLoading() {
+function ProjectsLoading() {
   return (
     <div className="flex justify-center items-center h-64">
       <Loader2 className="h-8 w-8 animate-spin" />
@@ -39,41 +39,41 @@ function MissionsLoading() {
   )
 }
 
-function MissionsError({ error }: { error: Error }) {
+function ProjectsError({ error }: { error: Error }) {
   return (
     <Alert variant="destructive">
       <AlertTitle>Error</AlertTitle>
-      <AlertDescription>Failed to load missions: {error.message}</AlertDescription>
+      <AlertDescription>Failed to load projects: {error.message}</AlertDescription>
     </Alert>
   )
 }
 
-export default async function MissionsPage({ searchParams }: { searchParams: { page?: string } }) {
+export default async function ProjectsPage({ searchParams }: { searchParams: { page?: string } }) {
   const { page } = await searchParams;
   const currentPage = page ? Number.parseInt(page) : 1
 
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-6">Recent NASA Projects</h1>
-      <Suspense fallback={<MissionsLoading />}>
-        <MissionsContent page={currentPage} />
+      <Suspense fallback={<ProjectsLoading />}>
+        <ProjectsContent page={currentPage} />
       </Suspense>
     </div>
   )
 }
 
-async function MissionsContent({ page }: { page: number }) {
+async function ProjectsContent({ page }: { page: number }) {
   try {
     const { projects, totalCount, pageSize } = await getPaginatedProjects(page)
     const totalPages = Math.ceil(totalCount / pageSize)
 
     return (
       <>
-        <MissionsList projects={projects} />
+        <ProjectsList projects={projects} />
         <Pagination currentPage={page} totalPages={totalPages} />
       </>
     )
   } catch (error) {
-    return <MissionsError error={error instanceof Error ? error : new Error("Unknown error")} />
+    return <ProjectsError error={error instanceof Error ? error : new Error("Unknown error")} />
   }
 }

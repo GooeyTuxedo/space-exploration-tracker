@@ -11,7 +11,7 @@ export default function Header() {
         <nav>
           <ul className="flex space-x-4">
             <li>
-              <Link href="/missions">Missions</Link>
+              <Link href="/projects">Projects</Link>
             </li>
             <li>
               <Link href="/events">Events</Link>

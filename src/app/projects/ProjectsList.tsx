@@ -6,11 +6,11 @@ interface Project {
   lastUpdated: string
 }
 
-interface MissionsListProps {
+interface ProjectsListProps {
   projects: Project[]
 }
 
-export function MissionsList({ projects }: MissionsListProps) {
+export function ProjectsList({ projects }: ProjectsListProps) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {projects.map((project) => (
@@ -22,7 +22,7 @@ export function MissionsList({ projects }: MissionsListProps) {
             <p className="text-sm text-muted-foreground mb-2">
               Last Updated: {new Date(project.lastUpdated).toLocaleDateString()}
             </p>
-            <Link href={`/missions/${project.projectId}`} className="text-blue-500 hover:underline">
+            <Link href={`/projects/${project.projectId}`} className="text-blue-500 hover:underline">
               View Details
             </Link>
           </CardContent>

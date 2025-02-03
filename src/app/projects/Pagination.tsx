@@ -13,7 +13,7 @@ export function Pagination({ currentPage, totalPages }: PaginationProps) {
   return (
     <div className="flex justify-center items-center space-x-2 mt-8">
       <Button variant="outline" disabled={currentPage <= 1} asChild>
-        <Link href={`/missions?page=${currentPage - 1}`}>
+        <Link href={`/projects?page=${currentPage - 1}`}>
           <ChevronLeft className="h-4 w-4" />
           Previous
         </Link>
@@ -22,7 +22,7 @@ export function Pagination({ currentPage, totalPages }: PaginationProps) {
         Page {currentPage} of {totalPages}
       </span>
       <Button variant="outline" disabled={currentPage >= totalPages} asChild>
-        <Link href={`/missions?page=${currentPage + 1}`}>
+        <Link href={`/projects?page=${currentPage + 1}`}>
           Next
           <ChevronRight className="h-4 w-4" />
         </Link>
