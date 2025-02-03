@@ -9,8 +9,6 @@ export default async function ProjectDetailsPage(props: { params: Promise<{ id: 
     const projectData = await fetchProjectDetails(Number.parseInt(params.id))
     const project = projectData.project
 
-    console.log(`project details: `, project)
-
     return (
       <div className="container mx-auto px-4 py-8">
         <Card>

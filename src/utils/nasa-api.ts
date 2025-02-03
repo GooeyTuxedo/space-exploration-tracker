@@ -19,3 +19,14 @@ export async function fetchNasaData(subdomain: string = "api", endpoint: string,
 export async function fetchProjectDetails(projectId: number) {
   return fetchNasaData("techport", `/api/projects/${projectId}`)
 }
+
+export async function fetchAllProjects() {
+  const currentYear = new Date().getFullYear()
+  const formattedDate = `${currentYear}-01-01`
+
+  const response = await fetchNasaData('techport', '/api/projects', { 
+    updatedSince: formattedDate
+  });
+
+  return response.projects;
+}
