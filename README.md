@@ -1,4 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Space Exploration Tracker
+
+## Description
+
+Space Exploration Tracker is a Next.js application that provides information on space missions, celestial events, and stunning images from space. It uses NASA's APIs to fetch real-time data and present it in an engaging and interactive way.
+
+## Features
+
+- **Missions Page**: Displays recent NASA projects with pagination.
+- **Gallery**: Showcases stunning space images from NASA's Astronomy Picture of the Day (APOD) API.
+- **Learn**: Provides educational content about various space-related topics.
+- **Responsive Design**: Fully responsive layout that works on desktop and mobile devices.
+- **Dark Mode**: Supports both light and dark themes.
+
+## Technologies Used
+
+- Next.js 13 (App Router)
+- React
+- TypeScript
+- Tailwind CSS
+- shadcn/ui components
+- NASA APIs
+
+## Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- Node.js (v14.0.0 or later)
+- npm or yarn
+- A NASA API key (you can obtain one from https://api.nasa.gov/)
 
 ## Getting Started
 
